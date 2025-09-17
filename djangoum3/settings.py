@@ -128,3 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ##  Informa ao django que estamos usando um modelo de usuário customizado para autenticação
 AUTH_USER_MODEL = 'usuarios.CustomUsuarios'
+
+LOGIN_REDIRECT_URL = 'index'  # Redireciona para a página inicial após o login
+LOGOUT_REDIRECT_URL = 'index'  # Redireciona para a página inicial após o logout
