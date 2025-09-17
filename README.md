@@ -11,6 +11,17 @@ Este projeto implementa um **modelo de usuário customizado** no Django, permiti
 
 ## 📂 Estrutura e Arquivos Configurados
 
+### **veja os arquivos princiais**
+- admin.py
+- forms.py
+- models.py
+Todos dentro do app usuarios
+
+Também olhe o arquivo settings, pois nele foi setado uma constante que orienta o python a usar o sistema de autenticação dentro do app usuarios >> CustomUsuarios
+```python
+AUTH_USER_MODEL = 'usuarios.CustomUsuarios'
+```
+
 ### 1. **models.py**
 - Criado o modelo `CustomUsuarios`, estendendo `AbstractUser`.
 - Uso do `pass` inicialmente, para manter compatibilidade com o modelo padrão e abrir espaço para futuras customizações.
