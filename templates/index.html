@@ -3,7 +3,18 @@
     <div class="container">
         <h1>Geek University</h1>
         {% if user.is_anonymous %}
-           <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuário</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
         {% else %}
             <div class="alert alert-primary" role="alert">
                 Seja bem-vindo(a) {{ user.get_full_name }}!
